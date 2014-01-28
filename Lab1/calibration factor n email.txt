@@ -1,0 +1,8 @@
+c1=2lb/v
+c2=3/v
+c3=4inch/v
+After the calibration load is in lbf (need to convert to stress). Strain 1 is the strain in percentage. Strain 2 is actually DISPLACEMENT IN INCH (need to convert to strain.) Possion's ratio might be a little bit off.
+hrs d0=0.450 df=0.274 lf=2.516
+crs d0=0.435 df=0.310 lf=2.290
+
+My email zcao@utexas.edu. 
