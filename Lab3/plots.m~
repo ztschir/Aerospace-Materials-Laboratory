@@ -1,0 +1,7 @@
+clear all;
+clc;
+
+
+%% Load csv files
+
+untreated = csv()

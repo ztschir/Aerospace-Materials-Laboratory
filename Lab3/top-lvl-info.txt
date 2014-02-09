@@ -1,0 +1,71 @@
+--Column headers:
+
+Time,Extension,Load,Strain 1,Strain 2,Displacement (Strain 1),Displacement (Strain 2)
+(sec),(in),(lbf),(%),(%),(in),(in)
+
+
+--Untreated:
+
+Time at Break (Standard),444.15002,sec
+Load at Break (Standard),12418.78951,lbf
+Tensile extension at Break (Standard),0.74021,in
+Displacement (Strain 1) at Break (Standard),0.18564,in
+Displacement (Strain 2) at Break (Standard),845.46606,in
+Transverse extension 1 at Break (Standard),,in
+Transverse extension 2 at Break (Standard),,in
+
+
+--30 Min:
+
+Time at Break (Standard),440.05002,sec
+Load at Break (Standard),12585.22952,lbf
+Tensile extension at Break (Standard),0.73338,in
+Displacement (Strain 1) at Break (Standard),0.19067,in
+Displacement (Strain 2) at Break (Standard),845.46606,in
+Transverse extension 1 at Break (Standard),,in
+Transverse extension 2 at Break (Standard),,in
+
+
+--2 Hr:
+
+Time at Break (Standard),258.40001,sec
+Load at Break (Standard),12655.03013,lbf
+Tensile extension at Break (Standard),0.82403,in
+Displacement (Strain 1) at Break (Standard),0.21490,in
+Displacement (Strain 2) at Break (Standard),845.46606,in
+Transverse extension 1 at Break (Standard),,in
+Transverse extension 2 at Break (Standard),,in
+
+
+--6 Hr:
+
+Time at Break (Standard),260.75001,sec
+Load at Break (Standard),12381.20044,lbf
+Tensile extension at Break (Standard),0.75177,in
+Displacement (Strain 1) at Break (Standard),0.18188,in
+Displacement (Strain 2) at Break (Standard),845.46606,in
+Transverse extension 1 at Break (Standard),,in
+Transverse extension 2 at Break (Standard),,in
+
+
+--24 Hr:
+
+Time at Break (Standard),283.75001,sec
+Load at Break (Standard),11275.16000,lbf
+Tensile extension at Break (Standard),0.47287,in
+Displacement (Strain 1) at Break (Standard),0.06684,in
+Displacement (Strain 2) at Break (Standard),845.46606,in
+Transverse extension 1 at Break (Standard),,in
+Transverse extension 2 at Break (Standard),,in
+
+
+--Anealed:
+
+Time at Break (Standard),210.65001,sec
+Load at Break (Standard),5648.32016,lbf
+Tensile extension at Break (Standard),0.68078,in
+Displacement (Strain 1) at Break (Standard),0.22429,in
+Displacement (Strain 2) at Break (Standard),845.46606,in
+Transverse extension 1 at Break (Standard),,in
+Transverse extension 2 at Break (Standard),,in
+
