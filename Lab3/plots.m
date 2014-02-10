@@ -185,7 +185,7 @@ clear anealedtemp;
 %lsline
 %hold off
 
-
+%%% Poisson's Ratio Calc %%%
 temp = polyfit(-untreated.strain2(1:3892),untreated.strain1(1:3892),1);
 untreated.poisson = -1/temp(1);
 
@@ -204,5 +204,24 @@ twentyfourhour.poisson = -1/temp(1);
 temp = polyfit(-anealed.strain2(1:2400),anealed.strain1(1:2400),1);
 anealed.poisson = -1/temp(1);
 
+
+%%% Young's Modulus %%%
+temp = polyfit(untreated.strain1(1:500),4.*untreated.load(1:500) ./ (pi*(untreated.d0^2)),1);
+untreated.youngs = 1/temp(1)
+
+temp = polyfit(thirtymin.strain1(1:500),4.*thirtymin.load(1:500) ./ (pi*(thirtymin.d0^2)),1);
+thirtymin.youngs = 1/temp(1)
+
+temp = polyfit(twohour.strain1(1:500),4.*twohour.load(1:500) ./ (pi*(twohour.d0^2)),1);
+twohour.youngs = 1/temp(1)
+
+temp = polyfit(sixhour.strain1(1:500),4.*sixhour.load(1:500) ./ (pi*(sixhour.d0^2)),1);
+sixhour.youngs = 1/temp(1)
+
+temp = polyfit(twentyfourhour.strain1(1:500),4.*twentyfourhour.load(1:500) ./ (pi*(twentyfourhour.d0^2)),1);
+twentyfourhour.youngs = 1/temp(1)
+
+temp = polyfit(anealed.strain1(1:500),4.*anealed.load(1:500) ./ (pi*(anealed.d0^2)),1);
+anealed.youngs = 1/temp(1)
 
 
