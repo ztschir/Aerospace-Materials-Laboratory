@@ -57,7 +57,7 @@ Using the stiffness of an atomic bond of 50 N/m and the center-to-center atomic 
 
 \begin{equation}
 \begin{split}
-	E = \frac{S_O}{r_O} = \frac{50}{3.0*10^-10} = 166.67 GPa
+	E = \frac{S_O}{r_O} = \frac{50}{3.0*10^{-10}} = 166.67 GPa
 	\label{equation:equation2}
 \end{split}
 \end{equation}
@@ -66,6 +66,44 @@ Using the stiffness of an atomic bond of 50 N/m and the center-to-center atomic 
 This material is probably some sort of Silicon crystal according to past emperical data.
 
 \subsection{Question 4}
+
+When assuming that the crystal structure is a simple cubic lattice, then only a few equations are needed to solve this. We need the conversion formula to get the shear modulus from Young's Modulus and Poission's Ratio, then use the relationship between Hooke's law and assume small deformations. After combining these two, you only need to use the relationship that the maximum shear stress is half of the yield strength of the material.
+
+\begin{equation}
+\begin{split}
+	\sigma_y = 2*\tau_{max} = \frac{2*G*b}{2*\pi*a} = \frac{E}{2*\pi(1 + \nu))} \\
+        = \frac{70 GPa}{2\pi(1+0.3)} = 8.569 GPa
+	\label{equation:equation3}
+\end{split}
+\end{equation}
+\\
+
+Comparing this to the 40 MPa emperical data, this is roughly two orders of magnitude larger. This is due to the impurities and other imperfections in the material. The lattice friction stress is much less than the theoretical shear strength.
+
+\subsection{Question 5a}
+
+Using the equation condition for dislocation motion and computing the angle normal to the slip plane as being 45 degrees, the following can be found for the resolved shear stress:
+
+\begin{equation}
+\begin{split}
+        \tau_T = \sigma \cos{\lambda}\cos{\phi} = 52 MPa * \cos{54.73} \cos{45} = 21.23 MPa
+	\label{equation:equation4}
+\end{split}
+\end{equation}
+\\
+
+\subsection{Question 5b}
+
+Using the same equation as in Question 5a and calculating that the angle normal to the slip plane and slip direction angle are the same as above, the magnitude of the applied tensile stress to initiate plastic yielding is:
+
+\begin{equation}
+\begin{split}
+         \sigma =  \frac{\tau_T}{\cos{\lambda}\cos{\phi}} = \frac{30 MPa}{\cos{54.73} \cos{45}} = 73.47 MPa
+	\label{equation:equation5}
+\end{split}
+\end{equation}
+\\
+
 
 
 

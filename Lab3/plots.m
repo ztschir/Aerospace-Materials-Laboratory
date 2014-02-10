@@ -115,31 +115,97 @@ anealed.disp2     = anealedtemp(1:(end-5),7);
 clear anealedtemp;
 
 
+%%% Young's Modulus %%%
+temp = polyfit(untreated.strain1(1:500),4.*untreated.load(1:500) ./ (pi*(untreated.d0^2)),1);
+untreated.youngs = temp(1);
+
+temp = polyfit(thirtymin.strain1(1:500),4.*thirtymin.load(1:500) ./ (pi*(thirtymin.d0^2)),1);
+thirtymin.youngs = temp(1)
+
+temp = polyfit(twohour.strain1(1:500),4.*twohour.load(1:500) ./ (pi*(twohour.d0^2)),1);
+twohour.youngs = temp(1);
+
+temp = polyfit(sixhour.strain1(1:500),4.*sixhour.load(1:500) ./ (pi*(sixhour.d0^2)),1);
+sixhour.youngs = temp(1);
+
+temp = polyfit(twentyfourhour.strain1(1:1100),4.*twentyfourhour.load(1:1100) ./ (pi*(twentyfourhour.d0^2)),1);
+twentyfourhour.youngs = temp(1);
+
+temp = polyfit(anealed.strain1(1:500),4.*anealed.load(1:500) ./ (pi*(anealed.d0^2)),1);
+anealed.youngs = temp(1);
+
 % Stress = 4*load / pi*d0^2
 
-%figure('Name','Untreated stress-strain')
-%plot(untreated.strain1, 4.*untreated.load ./ (pi*(untreated.d0^2)),...
-%    untreated.extension./untreated.L0, 4.*untreated.load ./ (pi*(untreated.d0^2)));
-%
-%figure('Name','Thirtymin stress-strain')
-%plot(thirtymin.strain1, 4.*thirtymin.load ./ (pi*(thirtymin.d0^2)),...
-%    thirtymin.extension./thirtymin.L0, 4.*thirtymin.load ./ (pi*(thirtymin.d0^2)));
-%
-%figure('Name','Twohour stress-strain')
-%plot(twohour.strain1, 4.*twohour.load ./ (pi*(twohour.d0^2)),...
-%    twohour.extension./twohour.L0, 4.*twohour.load ./ (pi*(twohour.d0^2)));
-%
-%figure('Name','Sixhour stress-strain')
-%plot(sixhour.strain1, 4.*sixhour.load ./ (pi*(sixhour.d0^2)),...
-%    sixhour.extension./sixhour.L0, 4.*sixhour.load ./ (pi*(sixhour.d0^2)));
-%
-%figure('Name','Twentyfourhour stress-strain')
-%plot(twentyfourhour.strain1, 4.*twentyfourhour.load ./ (pi*(twentyfourhour.d0^2)),...
-%    twentyfourhour.extension./twentyfourhour.L0, 4.*twentyfourhour.load ./ (pi*(twentyfourhour.d0^2)));
-%
-%figure('Name','Anealed stress-strain')
-%plot(anealed.strain1, 4.*anealed.load ./ (pi*(anealed.d0^2)),...
-%    anealed.extension./anealed.L0, 4.*anealed.load ./ (pi*(anealed.d0^2)));
+figure('Name','Untreated stress-strain')
+untreatedplot = plot(untreated.strain1, 4.*untreated.load ./ (pi*(untreated.d0^2)),...
+    100*untreated.extension./untreated.L0, ...
+    4.*untreated.load./(pi*(untreated.d0^2)), ...
+    untreated.strain1(1:2050), ...
+    (untreated.youngs).*untreated.strain1(1:2050) - 0.2*(untreated.youngs));
+xlabel('Engineering Strain (in/in)');
+ylabel('Engineering Stress (psi)');
+title('Engineering Stress-Strain diagram for Untreated aluminum');
+legend('Extensometer Data', 'Crosshead displacement', '0.2% offset');
+
+figure('Name','Thirtymin stress-strain')
+plot(thirtymin.strain1, 4.*thirtymin.load ./ (pi*(thirtymin.d0^2)),...
+    100*thirtymin.extension./thirtymin.L0, ...
+    4.*thirtymin.load ./ (pi*(thirtymin.d0^2)), ...
+    thirtymin.strain1(1:2500), ...
+    (thirtymin.youngs).*thirtymin.strain1(1:2500) - 0.2*(thirtymin.youngs));
+xlabel('Engineering Strain (in/in)');
+ylabel('Engineering Stress (psi)');
+title('Engineering Stress-Strain diagram for 0.5 hour treated aluminum');
+legend('Extensometer Data', 'Crosshead displacement', '0.2% offset');
+
+figure('Name','Twohour stress-strain')
+plot(twohour.strain1, 4.*twohour.load ./ (pi*(twohour.d0^2)),...
+    100*twohour.extension./twohour.L0, ...
+    4.*twohour.load ./ (pi*(twohour.d0^2)), ...
+    twohour.strain1(1:1550), ...
+    (twohour.youngs).*twohour.strain1(1:1550) - 0.2*(twohour.youngs));
+xlabel('Engineering Strain (in/in)');
+ylabel('Engineering Stress (psi)');
+title('Engineering Stress-Strain diagram for 2 hour treated aluminum');
+legend('Extensometer Data', 'Crosshead displacement', '0.2% offset');
+
+
+figure('Name','Sixhour stress-strain')
+plot(sixhour.strain1, 4.*sixhour.load ./ (pi*(sixhour.d0^2)),...
+    100*sixhour.extension./sixhour.L0, ...
+    4.*sixhour.load ./ (pi*(sixhour.d0^2)), ...
+    sixhour.strain1(1:2050), ...
+    (sixhour.youngs).*sixhour.strain1(1:2050) - 0.2*(sixhour.youngs));
+xlabel('Engineering Strain (in/in)');
+ylabel('Engineering Stress (psi)');
+title('Engineering Stress-Strain diagram for 6 hour treated aluminum');
+legend('Extensometer Data', 'Crosshead displacement', '0.2% offset');
+
+
+figure('Name','Twentyfourhour stress-strain')
+plot(twentyfourhour.strain1, 4.*twentyfourhour.load ./ (pi*(twentyfourhour.d0^2)),...
+    100*twentyfourhour.extension./twentyfourhour.L0, ...
+    4.*twentyfourhour.load ./ (pi*(twentyfourhour.d0^2)), ...
+    twentyfourhour.strain1(1:3000), ...
+    (twentyfourhour.youngs).*twentyfourhour.strain1(1:3000) - ...
+    0.2*(twentyfourhour.youngs));
+xlabel('Engineering Strain (in/in)');
+ylabel('Engineering Stress (psi)');
+title('Engineering Stress-Strain diagram for 24 hour treated aluminum');
+legend('Extensometer Data', 'Crosshead displacement', '0.2% offset');
+
+
+figure('Name','Anealed stress-strain')
+plot(anealed.strain1, 4.*anealed.load ./ (pi*(anealed.d0^2)),...
+    100*anealed.extension./anealed.L0, ...
+    4.*anealed.load ./ (pi*(anealed.d0^2)), ...
+    anealed.strain1(1:700), ...
+    (anealed.youngs).*anealed.strain1(1:700) - 0.2*(anealed.youngs));
+xlabel('Engineering Strain (in/in)');
+ylabel('Engineering Stress (psi)');
+title('Engineering Stress-Strain diagram for Anealed aluminum');
+legend('Extensometer Data', 'Crosshead displacement', '0.2% offset');
+
 
 %figure('Name','All stress-strain diagrams');
 %plot(untreated.strain1, 4.*untreated.load ./ (pi*(untreated.d0^2)),...
@@ -148,7 +214,7 @@ clear anealedtemp;
 %    sixhour.strain1, 4.*sixhour.load ./ (pi*(sixhour.d0^2)),...
 %    twentyfourhour.strain1, 4.*twentyfourhour.load ./ (pi*(twentyfourhour.d0^2)),...
 %    anealed.strain1, 4.*anealed.load ./ (pi*(anealed.d0^2)))
-
+%
 %figure('Name', 'Untreated Poissons Ratio')
 %hold on
 %plot(-untreated.strain2(1:3892),untreated.strain1(1:3892),'.');
@@ -184,7 +250,7 @@ clear anealedtemp;
 %plot(-anealed.strain2(1:2400),anealed.strain1(1:2400),'.');
 %lsline
 %hold off
-
+%
 %%% Poisson's Ratio Calc %%%
 temp = polyfit(-untreated.strain2(1:3892),untreated.strain1(1:3892),1);
 untreated.poisson = -1/temp(1);
@@ -204,24 +270,48 @@ twentyfourhour.poisson = -1/temp(1);
 temp = polyfit(-anealed.strain2(1:2400),anealed.strain1(1:2400),1);
 anealed.poisson = -1/temp(1);
 
+% Yield Stress
+untreated.yieldstress      = 50610;
+thirtymin.yieldstress      = 49310;
+twohour.yieldstress        = 49720;
+sixhour.yieldstress        = 51530;
+twentyfourhour.yieldstress = 61630;
+anealed.yieldstress        = 13430;
 
-%%% Young's Modulus %%%
-temp = polyfit(untreated.strain1(1:500),4.*untreated.load(1:500) ./ (pi*(untreated.d0^2)),1);
-untreated.youngs = 1/temp(1)
+% Ultimate Tensile strength
+untreated.ultimatetensile = max(4.*untreated.load ./ (pi* ...
+                                                  (untreated.d0^2)));
+thirtymin.ultimatetensile = max(4.*thirtymin.load ./ (pi* ...
+                                                  (thirtymin.d0^2)));
+twohour.ultimatetensile = max(4.*twohour.load ./ (pi* ...
+                                                  (twohour.d0^2)));
+sixhour.ultimatetensile = max(4.*sixhour.load ./ (pi* ...
+                                                  (sixhour.d0^2)));
+twentyfourhour.ultimatetensile = max(4.*twentyfourhour.load ./ (pi* ...
+                                                  (twentyfourhour.d0^2)));
+anealed.ultimatetensile = max(4.*anealed.load ./ (pi* ...
+                                                  (anealed.d0^2)));
 
-temp = polyfit(thirtymin.strain1(1:500),4.*thirtymin.load(1:500) ./ (pi*(thirtymin.d0^2)),1);
-thirtymin.youngs = 1/temp(1)
+% Toughness
 
-temp = polyfit(twohour.strain1(1:500),4.*twohour.load(1:500) ./ (pi*(twohour.d0^2)),1);
-twohour.youngs = 1/temp(1)
+untreated.toughness = sum(4.*untreated.load(1:end-20) ./ (pi* ...
+                               (untreated.d0^2)))*mean(diff(untreated.strain1))
+thirtymin.toughness = sum(4.*thirtymin.load(1:end-20) ./ (pi* ...
+                               (thirtymin.d0^2)))*mean(diff(thirtymin.strain1));
+twohour.toughness = sum(4.*twohour.load(1:end-20) ./ (pi* ...
+                               (twohour.d0^2)))*mean(diff(twohour.strain1));
+sixhour.toughness = sum(4.*sixhour.load(1:end-20) ./ (pi* ...
+                               (sixhour.d0^2)))*mean(diff(sixhour.strain1));
+twentyfourhour.toughness = sum(4.*twentyfourhour.load(1:end-20) ./ (pi* ...
+                               (twentyfourhour.d0^2)))*mean(diff(twentyfourhour.strain1));
+anealed.toughness = sum(4.*anealed.load(1:end-20) ./ (pi* ...
+                               (anealed.d0^2)))*mean(diff(anealed.strain1));
 
-temp = polyfit(sixhour.strain1(1:500),4.*sixhour.load(1:500) ./ (pi*(sixhour.d0^2)),1);
-sixhour.youngs = 1/temp(1)
+% Ductility
 
-temp = polyfit(twentyfourhour.strain1(1:500),4.*twentyfourhour.load(1:500) ./ (pi*(twentyfourhour.d0^2)),1);
-twentyfourhour.youngs = 1/temp(1)
-
-temp = polyfit(anealed.strain1(1:500),4.*anealed.load(1:500) ./ (pi*(anealed.d0^2)),1);
-anealed.youngs = 1/temp(1)
-
-
+untreated.ductility      = untreated.strain1(end-10)
+thirtymin.ductility      = thirtymin.strain1(end-10)
+twohour.ductility        = twohour.strain1(end-10)
+sixhour.ductility        = sixhour.strain1(end-10)
+twentyfourhour.ductility = twentyfourhour.strain1(end-10)
+anealed.ductility        = anealed.strain1(end-10)
