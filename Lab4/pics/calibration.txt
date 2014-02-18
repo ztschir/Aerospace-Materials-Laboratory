@@ -1,0 +1,1 @@
+In 5x, 1pixel is 0.0014038mm. Think about how to convert to 50x. 

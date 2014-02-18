@@ -1,0 +1,110 @@
+\documentclass[12pt]{report}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[hypcap]{caption}
+\usepackage{setspace} 
+
+\title{Lab 2: Crystalline Structures and Dislocations}
+\author{Zachary Tschirhart \\
+	\small \\
+        \small EID: zst75 \\
+	\small Department of Aerospace Engineering and Engineering Mechanics \\
+	\small \textbf{ASE 324L (Mon 2:00-5:00)} \\
+	\small Unique: 13740}
+
+\date{January 27, 2014}
+
+
+\begin{document}
+\maketitle
+
+\setcounter{secnumdepth}{0}
+
+\section{Results and Discussion}
+\doublespacing
+
+\subsection{Question 1}
+
+Using an atomic radius of 0.124 nm, atomic weight of 55.85 g/mol, the BCC crystal structure information and the associated equations a theoretical density can be calculated:
+
+\begin{equation}
+\begin{split}
+	\rho = \frac{nM}{N_a V_c} = \frac{3M (APF)}{4N_a \pi R_a^3} 
+        = \frac{3 * 55.85 * 0.68}{4 * 6.022*10^{23} * \pi * (0.124*10^-7)^3} \\
+        = 7.897 \frac{g}{cm^3}
+	\label{equation:equation1}
+\end{split}
+\end{equation}
+\\
+The experimental density of 7.87 \(g/cm^3\) is relativly close to the theoretical value calculated above.
+
+
+\subsection{Question 2}
+The three different interatomic primary bonds are ionic, covalent, and metallic. Some examples of materials that have ionic bonds are table salt (NaCL) and alumina (\(Al_2O_3\)). Typically ionic bonds have the lowest bond stiffness and Young's modulus of all three bond types, somewhere between 8-24 N/m and 32-96 GPa, respectivly. Ionic bonding occurs when two elements are electrostaticly attracted to each other with oppositely charged ions.
+
+Covalent bonds occur when elements share electron pairs between the atoms. Some examples include diamonds, silicon, and silicate glasses. Of the three primary bond types, covalent bonds have the strongest bond stiffness and Young's modulus.
+
+Metallic bonds have atoms found sharing ``free'' electrons. Examples include any metals and alloys.
+
+
+\subsection{Question 3}
+
+Using the stiffness of an atomic bond of 50 N/m and the center-to-center atomic spacing of 0.3 nm, the elastic modulus is approximately:
+
+\begin{equation}
+\begin{split}
+	E = \frac{S_O}{r_O} = \frac{50}{3.0*10^{-10}} = 166.67 GPa
+	\label{equation:equation2}
+\end{split}
+\end{equation}
+\\
+
+This material is probably some sort of Silicon crystal according to past emperical data.
+
+\subsection{Question 4}
+
+When assuming that the crystal structure is a simple cubic lattice, then only a few equations are needed to solve this. We need the conversion formula to get the shear modulus from Young's Modulus and Poission's Ratio, then use the relationship between Hooke's law and assume small deformations. After combining these two, you only need to use the relationship that the maximum shear stress is half of the yield strength of the material.
+
+\begin{equation}
+\begin{split}
+	\sigma_y = 2*\tau_{max} = \frac{2*G*b}{2*\pi*a} = \frac{E}{2*\pi(1 + \nu))} \\
+        = \frac{70 GPa}{2\pi(1+0.3)} = 8.569 GPa
+	\label{equation:equation3}
+\end{split}
+\end{equation}
+\\
+
+Comparing this to the 40 MPa emperical data, this is roughly two orders of magnitude larger. This is due to the impurities and other imperfections in the material. The lattice friction stress is much less than the theoretical shear strength.
+
+\subsection{Question 5a}
+
+Using the equation condition for dislocation motion and computing the angle normal to the slip plane as being 45 degrees, the following can be found for the resolved shear stress:
+
+\begin{equation}
+\begin{split}
+        \tau_T = \sigma \cos{\lambda}\cos{\phi} = 52 MPa * \cos{54.73} \cos{45} = 21.23 MPa
+	\label{equation:equation4}
+\end{split}
+\end{equation}
+\\
+
+\subsection{Question 5b}
+
+Using the same equation as in Question 5a and calculating that the angle normal to the slip plane and slip direction angle are the same as above, the magnitude of the applied tensile stress to initiate plastic yielding is:
+
+\begin{equation}
+\begin{split}
+         \sigma =  \frac{\tau_T}{\cos{\lambda}\cos{\phi}} = \frac{30 MPa}{\cos{54.73} \cos{45}} = 73.47 MPa
+	\label{equation:equation5}
+\end{split}
+\end{equation}
+\\
+
+
+
+
+\end{document}
