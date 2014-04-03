@@ -1,0 +1,80 @@
+clear all;
+clc;
+
+% Import files
+mon_1_1.data = csvread('mon_1_1');
+mon_1_2.data = csvread('mon_1_1');
+mon_1_3.data = csvread('mon_1_1');
+
+mon_2_1.data = csvread('mon_2_1');
+mon_2_2.data = csvread('mon_2_2');
+mon_2_3.data = csvread('mon_2_3');
+
+tue_1_1.data = csvread('tue_1_1');
+tue_1_2.data = csvread('tue_1_2');
+tue_1_3.data = csvread('tue_1_3');
+
+wed_1_1.data = csvread('wed_1_1');
+wed_1_2.data = csvread('wed_1_2');
+wed_1_3.data = csvread('wed_1_3');
+
+wed_2_1.data = csvread('wed_2_1');
+wed_2_2.data = csvread('wed_2_2');
+wed_2_3.data = csvread('wed_2_3');
+
+thur_1_1.data = csvread('thur_1_1');
+thur_1_2.data = csvread('thur_1_2');
+thur_1_3.data = csvread('thur_1_3');
+
+% Width
+mon_1_1.width = 0.471;
+mon_1_2.width = 0.470;
+mon_1_3.width = 0.480;
+
+mon_2_1.width = 0.4745;
+mon_2_2.width = 0.4740;
+mon_2_3.width = 0.4715;
+
+tue_1_1.width = 0.475;
+tue_1_2.width = 0.476;
+tue_1_3.width = 0.475;
+
+wed_1_1.width = 0.475;
+wed_1_2.width = 0.472;
+wed_1_3.width = 0.472;
+
+wed_2_1.width = 0.480;
+wed_2_2.width = 0.482;
+wed_2_3.width = 0.478;
+
+thur_1_1.width = 0.471;
+thur_1_2.width = 0.480;
+thur_1_3.width = 0.474;
+
+% Thickness
+mon_1_1.thickness = 0.018;
+mon_1_2.thickness = 0.0172;
+mon_1_3.thickness = 0.0179;
+
+mon_2_1.thickness = 0.021;
+mon_2_2.thickness = 0.021;
+mon_2_3.thickness = 0.021;
+
+tue_1_1.thickness = 0.02;
+tue_1_2.thickness = 0.02;
+tue_1_3.thickness = 0.02;
+
+wed_1_1.thickness = 0.018;
+wed_1_2.thickness = 0.018;
+wed_1_3.thickness = 0.018;
+
+wed_2_1.thickness = 0.0198;
+wed_2_2.thickness = 0.0205;
+wed_2_3.thickness = 0.0210;
+
+thur_1_1.thickness = 0.02;
+thur_1_2.thickness = 0.0195;
+thur_1_3.thickness = 0.018;
+
+
+
