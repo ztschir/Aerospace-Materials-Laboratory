@@ -1,0 +1,7 @@
+clear all;
+clc;
+
+deg_0 = csvread('0degree.csv');
+deg_45 = csvread('45degree.csv');
+deg_90 = csvread('90degree.csv');
+

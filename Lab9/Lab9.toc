@@ -1,0 +1,10 @@
+\select@language {english}
+\contentsline {section}{Introduction}{2}
+\contentsline {section}{Experimental and Data Reduction Procedures}{2}
+\contentsline {subsection}{Apparatus}{2}
+\contentsline {subsection}{Procedure}{3}
+\contentsline {subsection}{Data Reduction}{3}
+\contentsline {section}{Results and Discussion}{5}
+\contentsline {section}{Micromechanics Analysis}{12}
+\contentsline {section}{Conclusion}{14}
+\contentsline {section}{Bibliography}{15}

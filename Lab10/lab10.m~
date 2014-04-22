@@ -1,0 +1,81 @@
+clear all;
+clc;
+
+spec1.t = .509
+spec2.t = .2561
+spec3.t = .126
+spec4.t = .5
+spec5.t = .251
+spec6.t = .122
+spec7.t = .5
+spec8.t = .251
+spec9.t = .126
+spec10.t = .5
+spec11.t = .251
+spec12.t = .126
+spec13.t = .502
+spec14.t = .252
+spec15.t = .127
+spec16.t = .503
+spec17.t = .254
+spec18.t = .127
+
+spec1.w = 2.0345
+spec2.w = 2.1125
+spec3.w = 1.96
+spec4.w = 2.04
+spec5.w = 2.023
+spec6.w = 1.967
+spec7.w = 2.053
+spec8.w = 2.06
+spec9.w = 2.09
+spec10.w = 2.053
+spec11.w = 2.06
+spec12.w = 2.09
+spec13.w = 1.98
+spec14.w = 1.991
+spec15.w = 1.97
+spec16.w = 2.061
+spec17.w = 2.002
+spec18.w = 1.993
+
+spec1.a = 1.140
+spec2.a = .7975
+spec3.a = 1.321
+spec4.a = 1.127
+spec5.a = .759
+spec6.a = 1.098
+spec7.a = 1.310
+spec8.a = .946
+spec9.a = 1.138
+spec10.a = 1.310
+spec11.a = .946
+spec12.a = 1.138
+spec13.a = 1.204
+spec14.a = .822
+spec15.a = 1.112
+spec16.a = 1.473
+spec17.a = .890
+spec18.a = .850
+
+spec1.data = tdfread('spec1.dat')
+spec2.data = tdfread('spec2.dat')
+spec3.data = tdfread('spec3.dat')
+spec4.data = tdfread('spec4.dat')
+spec5.data = tdfread('spec5.dat')
+spec6.data = tdfread('spec6.dat')
+spec7.data = tdfread('spec7.dat')
+spec8.data = tdfread('spec8.dat')
+spec9.data = tdfread('spec9.dat')
+spec10.data =tdfread('spec10.dat')
+spec11.data =tdfread('spec11.dat')
+spec12.data =tdfread('spec12.dat')
+spec13.data =tdfread('spec13.dat')
+spec14.data =tdfread('spec14.dat')
+spec15.data =tdfread('spec15.dat')
+spec16.data =tdfread('spec16.dat')
+spec17.data =tdfread('spec17.dat')
+spec18.data =tdfread('spec18.dat')
+
+
+
